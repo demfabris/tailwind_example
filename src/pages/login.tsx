@@ -5,7 +5,7 @@ import { Layout } from '../components/Layout'
 
 const LoginPage = () => (
   <Layout>
-    <form className="flex flex-col px-4 xl:w-2/5">
+    <form className="flex flex-col px-4 xl:w-2/5 xl:px-12">
       <h1 className="text-lg font-bold text-blue-500 leading-6">Login</h1>
       <span className="mt-1 mb-6 text-sm text-gray-600">
         Please provide your e-mail and password to access the dashboard.
