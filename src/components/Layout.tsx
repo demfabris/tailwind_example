@@ -7,13 +7,16 @@ interface Props {
   children?: ReactNode
 }
 export const Layout = ({ children }: Props) => {
-  const [logged, setLogged] = useState(false)
+  const [sidebarOpen, setSidebarOpen] = useState(false)
   const { pathname } = useRouter()
 
   return (
     <section>
-      <Header />
-      {logged && <Navigation pathname={pathname} />}
+      <Header
+        sidebarState={[sidebarOpen, setSidebarOpen]}
+        pathname={pathname}
+      />
+      <Navigation sidebarOpen={sidebarOpen} pathname={pathname} />
       <main className="flex items-center justify-center my-12">{children}</main>
     </section>
   )

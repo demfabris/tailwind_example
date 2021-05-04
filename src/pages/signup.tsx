@@ -5,8 +5,9 @@ import { Layout } from '../components/Layout'
 const SignUpPage = () => (
   <Layout>
     <form className="flex flex-col w-4/5 xl:w-2/5">
-      <h1 className="font-bold text-5xl mb-12">Create new account</h1>
-      <Input label="Username" />
+      <h1 className="mb-12 text-5xl font-bold">Create new account</h1>
+      <Input label="Full name" />
+      <Input label="E-mail" />
       <Input label="CPF" />
       <Input label="Password" />
       <Input label="Confirm password" />
