@@ -13,10 +13,10 @@ export const Header = () => {
         </Link>
       </div>
       <nav className="flex-row justify-end mr-6 font-medium space-x-6">
-        <a href="#" className="">
+        <a href="login" className="">
           Login
         </a>
-        <a href="#" className="font-bold text-blue-500 border-b-4">
+        <a href="signup" className="font-bold text-blue-500">
           Sign up
         </a>
       </nav>

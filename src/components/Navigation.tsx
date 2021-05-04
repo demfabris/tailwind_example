@@ -1,14 +1,14 @@
-import { useRouter } from 'next/dist/client/router'
 import Link from 'next/link'
 
-export const Navigation = () => {
-  const { pathname } = useRouter()
-
+interface Props {
+  pathname: string
+}
+export const Navigation = ({ pathname }: Props) => {
   const handleHighlightRoute = (route: string): string =>
     pathname.includes(route) ? 'text-blue-500 font-bold' : ''
 
   return (
-    <div className="flex justify-center mt-12">
+    <div className="flex justify-center mt-24">
       <ul className="flex flex-row items-center space-x-6 text-xl">
         <li className={handleHighlightRoute('purchase')}>
           <Link href="purchase">Purchase items</Link>
