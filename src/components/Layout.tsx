@@ -1,12 +1,14 @@
 import { ReactNode } from 'react'
 import { Header } from './Header'
+import { Navigation } from './Navigation'
 
 interface Props {
   children?: ReactNode
 }
 export const Layout = ({ children }: Props) => (
-  <section className="">
+  <section>
     <Header />
-    <main className="flex items-center justify-center mt-16">{children}</main>
+    <Navigation />
+    <main className="flex items-center justify-center mt-24">{children}</main>
   </section>
 )
