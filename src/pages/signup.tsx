@@ -4,7 +4,7 @@ import { Layout } from '../components/Layout'
 
 const SignUpPage = () => (
   <Layout>
-    <form className="flex flex-col px-4 xl:w-2/5">
+    <form className="flex flex-col px-4 xl:w-3/5 xl:px-24">
       <h1 className="text-lg font-bold text-blue-500 leading-6 mb-1">
         Sign Up
       </h1>
