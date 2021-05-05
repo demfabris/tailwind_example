@@ -21,7 +21,7 @@ export const Navigation = ({ sidebarOpen, pathname }: Props) => {
 
   return allowedPaths.includes(pathname) ? (
     <div
-      className={`fixed flex flex-col min-h-screen w-56 transition-all transform sm:transform-gpu ${handleSideBarOpen(
+      className={`fixed flex flex-col min-h-screen w-56 transition-all transform sm:transform-gpu z-50 ${handleSideBarOpen(
         sidebarOpen
       )}`}
     >

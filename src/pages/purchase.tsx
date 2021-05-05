@@ -4,7 +4,7 @@ import { Layout } from '../components/Layout'
 
 const PurchasePage = () => (
   <Layout>
-    <div className="flex flex-col w-4/5 xl:w-2/5">
+    <div className="flex flex-col px-4 xl:w-2/5 xl:px-24">
       <h1 className="text-lg font-bold text-blue-500 leading-6">
         New purchase
       </h1>
