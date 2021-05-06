@@ -1,5 +1,4 @@
 import { AppProps } from 'next/app'
-import 'tailwindcss/tailwind.css'
 import 'styles/globals.css'
 import { useAuth } from 'hooks'
 
