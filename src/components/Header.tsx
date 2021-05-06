@@ -1,15 +1,21 @@
+import React from 'react'
 import { useRouter } from 'next/dist/client/router'
 import Link from 'next/link'
 import { Dispatch, SetStateAction, useMemo } from 'react'
-import { useSessionStore } from 'store'
 
 interface Props {
   sidebarState: [boolean, Dispatch<SetStateAction<boolean>>]
   pathname: string
+  isLoggedIn: boolean
+  logout: () => void
 }
-export const Header = ({ sidebarState, pathname }: Props) => {
+export const Header = ({
+  sidebarState,
+  pathname,
+  isLoggedIn,
+  logout
+}: Props) => {
   const [sidebar, setSidebar] = sidebarState
-  const { isLoggedIn, logout } = useSessionStore()
   const router = useRouter()
 
   const allowedPaths = useMemo(
@@ -22,6 +28,7 @@ export const Header = ({ sidebarState, pathname }: Props) => {
       <div className="flex flex-row items-center flex-grow">
         {allowedPaths.includes(pathname) ? (
           <button
+            role="menu"
             className={`flex items-center justify-center w-12 h-12 mr-2 rounded-full lg:hidden ${
               sidebar ? 'bg-gray-100' : ''
             }`}
