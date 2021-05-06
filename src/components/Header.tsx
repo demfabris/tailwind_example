@@ -1,5 +1,7 @@
+import { useRouter } from 'next/dist/client/router'
 import Link from 'next/link'
 import { Dispatch, SetStateAction, useMemo } from 'react'
+import { useSessionStore } from 'store'
 
 interface Props {
   sidebarState: [boolean, Dispatch<SetStateAction<boolean>>]
@@ -7,6 +9,8 @@ interface Props {
 }
 export const Header = ({ sidebarState, pathname }: Props) => {
   const [sidebar, setSidebar] = sidebarState
+  const { isLoggedIn, logout } = useSessionStore()
+  const router = useRouter()
 
   const allowedPaths = useMemo(
     () => ['/purchase', '/list', '/total_cashback'],
@@ -53,12 +57,26 @@ export const Header = ({ sidebarState, pathname }: Props) => {
         </Link>
       </div>
       <nav className="flex-row justify-end font-medium space-x-6">
-        <a href="login" className="">
-          Login
-        </a>
-        <a href="signup" className="font-bold text-blue-500">
-          Sign up
-        </a>
+        {!isLoggedIn && (
+          <a href="login" className="">
+            Login
+          </a>
+        )}
+        {isLoggedIn ? (
+          <button
+            className="font-bold text-blue-500"
+            onClick={() => {
+              logout()
+              router.push('/login')
+            }}
+          >
+            Logout
+          </button>
+        ) : (
+          <a href="signup" className="font-bold text-blue-500">
+            Sign Up
+          </a>
+        )}
       </nav>
     </header>
   )
