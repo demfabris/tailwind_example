@@ -19,7 +19,7 @@ const LoginPage = () => {
 
       if (!!auth) {
         login(auth)
-        router.push('/list')
+        router.push('/purchase')
       } else {
         alert('Wrong credentials')
       }

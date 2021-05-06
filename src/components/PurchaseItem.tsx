@@ -1,3 +1,5 @@
+import { toBRL } from 'utils/formatCurrency'
+
 enum CashbackStatus {
   Pending,
   Approved,
@@ -7,9 +9,9 @@ enum CashbackStatus {
 interface Props {
   uid: string
   status: CashbackStatus
-  price: string
-  cashback: string
-  cashback_ratio: string
+  price: number
+  cashback: number
+  cashback_ratio: number
   date: string
 }
 export const PurchaseItem = ({
@@ -38,19 +40,18 @@ export const PurchaseItem = ({
           <h1 className="px-2 py-1 text-sm text-gray-800 border-2 rounded-full bg-gray-50">
             {uid}
           </h1>
-
           <h1 className="px-2 py-1">{handleCashbackStatus(status)}</h1>
         </div>
         <div className="flex flex-col w-full mt-auto">
           <div className="flex flex-row">
             <span className="mr-2 font-medium">Price:</span>
-            <span className="text-gray-500">{price}</span>
+            <span className="text-gray-500">{toBRL(price)}</span>
           </div>
           <div className="flex flex-row w-full">
             <span className="block mr-2 font-medium">Cashback:</span>
-            <span className="text-green-500">{cashback}</span>
+            <span className="text-green-500">{toBRL(cashback)}</span>
             <span className="flex items-center px-2 ml-4 text-xs bg-gray-100 rounded-full">
-              ({cashback_ratio})
+              ({cashback_ratio}%)
             </span>
           </div>
         </div>
