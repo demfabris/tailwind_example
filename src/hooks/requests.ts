@@ -24,7 +24,7 @@ export function useRequest(): ReqInstance {
     ) => {
       const body = JSON.stringify(payload)
       // const { href } = new URL(endpoint, API_URL)
-      const { href } = new URL(endpoint, DEV_URL)
+      const { href } = new URL(`api${endpoint}`, DEV_URL)
 
       const config = Object.assign(requestConfig, {
         headers: {

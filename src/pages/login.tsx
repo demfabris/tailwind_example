@@ -21,7 +21,7 @@ const LoginPage = () => {
         login(auth)
         router.push('/purchase')
       } else {
-        alert('Wrong credentials')
+        alert('Wrong credentials, try: `email` and `password` ')
       }
     })
   }

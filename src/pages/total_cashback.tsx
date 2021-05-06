@@ -4,7 +4,7 @@ import { toBRL } from 'utils/formatCurrency'
 import { Layout } from '../components/Layout'
 
 const CashbackPage = () => {
-  const { data } = useSWR('/total_cashback', fetcher)
+  const { data } = useSWR('total_cashback', fetcher)
 
   return (
     <Layout>

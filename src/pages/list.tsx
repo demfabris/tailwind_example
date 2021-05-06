@@ -5,7 +5,7 @@ import useSWR from 'swr'
 import { Layout } from '../components/Layout'
 
 const ListPurchasesPage = () => {
-  const { data } = useSWR('/list', fetcher)
+  const { data } = useSWR('list', fetcher)
 
   return (
     <Layout>

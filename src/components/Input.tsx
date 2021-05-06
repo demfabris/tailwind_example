@@ -1,16 +1,19 @@
 interface Props {
   label: string
   alt?: boolean
+  erroring?: boolean
   [props: string]: unknown
 }
-export const Input = ({ label, alt, ...props }: Props) => {
+export const Input = ({ label, alt, erroring, ...props }: Props) => {
   return (
     <div
       className={`w-full flex flex-row items-center my-2 ${alt && 'flex-col'}`}
     >
       {alt ? (
         <label
-          className="w-full block font-medium text-gray-700"
+          className={`w-full block font-medium text-gray-700 ${
+            erroring ? 'text-red-500' : ''
+          }`}
           htmlFor={label}
         >
           {label}
@@ -26,7 +29,9 @@ export const Input = ({ label, alt, ...props }: Props) => {
       <input
         className={`flex w-full p-2 border-2 border-gray-300 ${
           !alt ? 'rounded-none' : 'rounded-l-md'
-        } rounded-r-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm`}
+        } rounded-r-md focus:ring-1 focus:ring-blue-500 focus:border-blue-500 transition-all shadow-sm ${
+          erroring ? 'border-red-500' : ''
+        }`}
         {...props}
       />
     </div>
