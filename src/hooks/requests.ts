@@ -1,5 +1,4 @@
 import { useCallback } from 'react'
-import { API_URL } from 'services'
 
 type Payload = {
   [props: string]: string | unknown
@@ -23,8 +22,7 @@ export function useRequest(): ReqInstance {
       requestConfig: RequestConfig
     ) => {
       const body = JSON.stringify(payload)
-      // const { href } = new URL(endpoint, DEV_URL)
-      const { href } = new URL(`api${endpoint}`, API_URL)
+      const { href } = new URL(`api${endpoint}`, location.origin)
 
       const config = Object.assign(requestConfig, {
         headers: {

@@ -1,1 +1,1 @@
-export { API_URL, fetcher } from './api'
+export { fetcher } from './api'
