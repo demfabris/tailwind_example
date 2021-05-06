@@ -18,8 +18,9 @@ const ListPurchasesPage = () => {
           state
         </span>
         <ul className="w-full space-y-6">
-          {data?.map((item: Item) => (
+          {data?.map((item: Item, index: number) => (
             <PurchaseItem
+              key={index}
               uid={item.uid}
               status={item.status}
               price={item.price}
